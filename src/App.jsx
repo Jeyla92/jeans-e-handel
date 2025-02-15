@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import { Header } from "./components/Header/Header";
-function App() {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
-}
-
-export default App;
-=======
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 import { Gallery } from './components/Gallery/Gallery.jsx';
@@ -32,4 +20,3 @@ export const App = () => {
     </div>
   );
 };
->>>>>>> e8306bb (Pushar upp public med bilder Gallery mapp, Hero, ProductDetails)
