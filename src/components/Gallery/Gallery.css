@@ -1,0 +1,70 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+    position: relative; /* Se till att korten är referenspunkten */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative; 
+    display: block;
+    width: 100%;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10; 
+}
+
+
+.heart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 5px black;
+    z-index: 10;
+}
+
+
+.heart-button.favorited {
+    color: red;
+    transform: scale(1.2);
+}
