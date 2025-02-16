@@ -36,7 +36,7 @@ export const ProductDetail = ({ addToCart }) => {
         {similarProducts.map((similar) => (
           <Link
             key={similar.id}
-            to={`/product/${similar.id}`}
+            to={`/products/${similar.id}`}
             className="similar-product-card"
           >
             <img

@@ -30,9 +30,9 @@ export const Gallery = () => {
             {sortedProducts.map((product, index) => (
                 <div key={product.id} className="card">
                     <div className="image-container">
-                        <Link to={`/product/${product.id}`}>
-                            <img src={product.image} alt={product.name} className="card-image" />
-                        </Link>
+                    <Link to={`/products/${product.id}`}>
+                        <img src={product.image} alt={product.name} className="card-image" />
+                    </Link>
                         
                         {index === 0 && <span className="badge">Nyhet</span>}
                         <button 
