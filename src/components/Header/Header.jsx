@@ -1,5 +1,6 @@
 import "./Header.css";
-export const Header = () => {
+
+export const Header = ({ cart }) => {
   return (
     <header>
       <a href="/">
@@ -47,6 +48,7 @@ export const Header = () => {
         </a>
         <a href="#" className="icon-link">
           <i className="fa-solid fa-cart-shopping"></i>
+          <span className="cart-count">{cart.length}</span>
         </a>
       </div>
     </header>
