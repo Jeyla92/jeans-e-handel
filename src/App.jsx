@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Gallery } from "./components/Gallery/Gallery.jsx";
 import { Header } from "./components/Header/Header.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+import { Gallery } from "./components/Gallery/Gallery.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
 import { ProductDetail } from "./components/ProductDetail/ProductDetail.jsx";
 import { SearchPage } from "./components/Searchpage/SearchPage.jsx";
-
-import Hero from "./components/Hero/Hero.jsx";
 
 export const App = () => {
   const [cart, setCart] = useState([]);
@@ -20,9 +20,13 @@ export const App = () => {
       <Hero />
       <Routes>
         <Route path="/" element={<Gallery />} />
-        <Route path="/products/:id" element={<ProductDetail addToCart={addToCart} />} />
-        <Route path="/search" element={<SearchPage />} /> 
+        <Route
+          path="/products/:id"
+          element={<ProductDetail addToCart={addToCart} />}
+        />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
