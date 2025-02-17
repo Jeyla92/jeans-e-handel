@@ -7,7 +7,6 @@ export const Footer = () => {
           <i className="fas fa-fire feature-icon"></i>
           <p className="feature-title">Nyheter varje dag</p>
         </div>
-
         <div className="feature">
           <i className="fa-solid fa-truck feature-icon"></i>
           <p className="feature-title">Snabbleverans 1-2 arbetsdagar</p>

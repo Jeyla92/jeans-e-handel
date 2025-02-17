@@ -123,3 +123,7 @@
   color: #777;
   background-color: #f8f8f8;
 }
+
+.footer-container {
+  padding: -1px;
+}
