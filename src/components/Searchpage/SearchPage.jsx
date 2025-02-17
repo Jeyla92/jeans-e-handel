@@ -21,13 +21,16 @@ export const SearchPage = () => {
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id} className="product-card">
-            <Link to={`/products/${product.id}`}>
-                 <img src={product.image} alt={product.name} className="product-image" />
+              <Link to={`/products/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="product-image"
+                />
                 <h3>{product.name}</h3>
                 <p>{product.price} SEK</p>
                 <p>{product.brand}</p>
-            </Link>
-
+              </Link>
             </div>
           ))
         ) : (
