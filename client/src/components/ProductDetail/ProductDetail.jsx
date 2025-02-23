@@ -1,17 +1,44 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { products } from "../Gallery/Gallery";
 import "./ProductDetail.css";
 
 export const ProductDetail = ({ addToCart }) => {
   const { id } = useParams();
-  const product = products.find((p) => p.id === id);
+  const [product, setProduct] = useState(null);
+  const [similarProducts, setSimilarProducts] = useState([]);
+  const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    // Hämtar produktens detaljer från API:t
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`/api/products/${id}`);
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error("Fel vid hämtning av produkt:", error);
+      }
+    };
+
+    // Hämtar liknande produkter från API:t
+    const fetchSimilarProducts = async () => {
+      try {
+        const response = await fetch("/api/products");
+        const data = await response.json();
+        const shuffledProducts = data.sort(() => Math.random() - 0.5);
+        setSimilarProducts(shuffledProducts.slice(0, 5));
+      } catch (error) {
+        console.error("Fel vid hämtning av liknande produkter:", error);
+      }
+    };
+
+    fetchProduct();
+    fetchSimilarProducts();
+  }, [id]);
 
   if (!product) {
-    return <h2 className="error-message">Produkten hittades inte</h2>;
+    return <h2 className="error-message">Laddar produkt....</h2>;
   }
-
-  const similarProducts = products.filter((p) => p.id !== id).slice(0, 5);
 
   return (
     <div className="product-detail-container">
@@ -20,9 +47,17 @@ export const ProductDetail = ({ addToCart }) => {
         <div className="product-info">
           <h1>{product.name}</h1>
           <p className="brand">{product.brand}</p>
-          <p className="price">{product.price} SEK</p>
+          <p className="price">{product.price}</p>
           <p className="description">{product.description}</p>
-          <button className="add-to-cart" onClick={() => addToCart(product)}>
+          <input
+            value={quantity}
+            type="number"
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          />
+          <button
+            className="add-to-cart"
+            onClick={() => addToCart(product, quantity)}
+          >
             Lägg i varukorg
           </button>
         </div>
@@ -30,9 +65,9 @@ export const ProductDetail = ({ addToCart }) => {
 
       <h2 className="similar-products-title">Liknande produkter</h2>
       <div className="similar-products">
-        {similarProducts.map((similar) => (
+        {similarProducts.map((similar, index) => (
           <Link
-            key={similar.id}
+            key={`${similar.id}-${index}`}
             to={`/products/${similar.id}`}
             className="similar-product-card"
           >
@@ -41,9 +76,9 @@ export const ProductDetail = ({ addToCart }) => {
               alt={similar.name}
               className="similar-product-image"
             />
-            <p>{similar.name}</p>
-            <p>{similar.price} SEK</p>
-            <p className="brand">{similar.brand}</p>
+            <p className="similar-product-name">{similar.name}</p>
+            <p className="similar-product-price">{similar.price}</p>
+            <p className="similar-product-brand">{similar.brand}</p>
           </Link>
         ))}
       </div>

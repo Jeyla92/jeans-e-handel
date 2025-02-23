@@ -20,4 +20,18 @@ router.get("/", (req, res) => {
   }
 });
 
+router.get("/:id", (req, res) => {
+  try {
+    const stmt = db.prepare("SELECT * FROM products WHERE id = ?");
+    const product = stmt.get(req.params.id);
+    if (product) {
+      res.json(product);
+    } else {
+      res.status(404).json({ error: "Product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;

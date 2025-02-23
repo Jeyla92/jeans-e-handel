@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 export const Header = ({ cart }) => {
@@ -14,9 +14,9 @@ export const Header = ({ cart }) => {
 
   return (
     <header>
-      <a href="/">
+      <Link to="/">
         <img className="logo" src="/logo.png" alt="JA Jeans logo" />
-      </a>
+      </Link>
       <div className="search-container">
         <i className="fa-solid fa-magnifying-glass"></i>
         <input
@@ -29,12 +29,16 @@ export const Header = ({ cart }) => {
         />
       </div>
       <div className="icon-container">
-        <a href="#" className="icon-link"><i className="fa-regular fa-user"></i></a>
-        <a href="#" className="icon-link"><i className="fa-regular fa-heart"></i></a>
-        <a href="#" className="icon-link">
-          <i className="fa-solid fa-cart-shopping"></i>
+        <Link to="/user" className="icon-link">
+          <i className="fa-regular fa-user" />
+        </Link>
+        <Link to="/" className="icon-link">
+          <i className="fa-regular fa-heart" />
+        </Link>
+        <Link to="/shoppingcart" className="icon-link">
+          <i className="fa-solid fa-cart-shopping" />
           <span className="cart-count">{cart.length}</span>
-        </a>
+        </Link>
       </div>
     </header>
   );

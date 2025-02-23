@@ -26,7 +26,7 @@ const products = [
   },
   {
     name: "Low Waist Bootcut Jeans",
-    brand: "Wrangler",
+    brand: "Tommy Hilfiger",
     price: "799 KR",
     description: "Classic bootcut jeans with a flattering low waist fit.",
     image: "/woman2.jpg",
@@ -48,7 +48,7 @@ const products = [
   },
   {
     name: "Relaxed Baggy Jeans",
-    brand: "Carhartt",
+    brand: "Lee",
     price: "899 KR",
     description: "Ultra-relaxed baggy jeans for a laid-back style.",
     image: "/woman5.jpg",
