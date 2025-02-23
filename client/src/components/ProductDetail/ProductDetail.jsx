@@ -49,11 +49,6 @@ export const ProductDetail = ({ addToCart }) => {
           <p className="brand">{product.brand}</p>
           <p className="price">{product.price}</p>
           <p className="description">{product.description}</p>
-          <input
-            value={quantity}
-            type="number"
-            onChange={(e) => setQuantity(Number(e.target.value))}
-          />
           <button
             className="add-to-cart"
             onClick={() => addToCart(product, quantity)}

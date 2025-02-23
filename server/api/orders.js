@@ -51,6 +51,51 @@ router.post("/add", (req, res) => {
   }
 });
 
+router.post("/update", (req, res) => {
+  const { productId, quantity } = req.body;
+  if (!productId || !quantity || isNaN(quantity)) {
+    return res.json({
+      success: false,
+      message: "Produkt-ID eller antal saknas eller är ogiltigt",
+    });
+  }
+
+  const product = db
+    .prepare("SELECT * FROM products WHERE id = ?")
+    .get(productId);
+
+  if (!product) {
+    return res.json({
+      success: false,
+      message: "Produkten finns inte",
+    });
+  }
+
+  try {
+    const result = db
+      .prepare(
+        "UPDATE orders SET quantity = ?, total_price = ? WHERE product_id = ?"
+      )
+      .run(
+        quantity,
+        (parseFloat(product.price) * quantity).toFixed(2),
+        productId
+      );
+
+    if (result.changes > 0) {
+      res.json({ success: true });
+    } else {
+      res.json({
+        success: false,
+        message: "Ingen produkt hittades att uppdatera",
+      });
+    }
+  } catch (error) {
+    console.error("Fel vid uppdatering:", error);
+    res.status(500).json({ success: false, message: "Serverfel" });
+  }
+});
+
 router.delete("/remove", (req, res) => {
   const productId = parseInt(req.query.productId);
 
