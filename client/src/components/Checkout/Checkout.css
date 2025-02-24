@@ -1,0 +1,57 @@
+.information-container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  border: 0.2rem solid #9d9d9d;
+  margin-bottom: 5rem;
+}
+
+.h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"] {
+  padding: 1rem 5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+}
+
+.name-row {
+  display: flex;
+  gap: 2rem;
+}
+
+#email,
+#address {
+  width: 80%;
+}
+
+.buy {
+  padding: 1rem 3rem;
+  background-color: rgb(173, 173, 173);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.buy:hover {
+  background-color: #4e8da6;
+}
+.newsletter {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.newsletter input {
+  margin-right: 1rem;
+}
