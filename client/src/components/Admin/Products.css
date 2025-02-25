@@ -1,0 +1,98 @@
+.admin-container {
+  padding: 20px;
+}
+
+.main-content {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #91b6c5;
+  color: white;
+  padding: 20px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  list-style-type: none;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #417589;
+  border-radius: 5px;
+}
+
+.content-area {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.header {
+  background-color: #367690;
+  padding: 20px;
+  color: white;
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.btn {
+  background-color: #a7c2cd;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #6295aa;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #6e9fb3;
+  color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fefeff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
