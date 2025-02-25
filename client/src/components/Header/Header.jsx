@@ -32,9 +32,9 @@ export const Header = ({ cart }) => {
         <Link to="/user" className="icon-link">
           <i className="fa-regular fa-user" />
         </Link>
-        <Link to="/" className="icon-link">
+        <a href="#" className="icon-link">
           <i className="fa-regular fa-heart" />
-        </Link>
+        </a>
         <Link to="/shoppingcart" className="icon-link">
           <i className="fa-solid fa-cart-shopping" />
           <span className="cart-count">{cart.length}</span>

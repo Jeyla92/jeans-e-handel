@@ -7,6 +7,8 @@ import { ProductDetail } from "./components/ProductDetail/ProductDetail.jsx";
 import { SearchPage } from "./components/Searchpage/SearchPage.jsx";
 import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart.jsx";
 import { Checkout } from "./components/Checkout/Checkout.jsx";
+import { Products } from "./components/Admin/Products.jsx";
+import { NewProducts } from "./components/Admin/NewProducts.jsx";
 
 export const App = () => {
   const [cart, setCart] = useState([]);
@@ -93,6 +95,8 @@ export const App = () => {
           }
         />
         <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route path="/Admin/Products" element={<Products />} />
+        <Route path="/Admin/NewProducts" element={<NewProducts />} />
       </Routes>
       <Footer />
     </div>

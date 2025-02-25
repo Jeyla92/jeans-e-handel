@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom";
 import "./Footer.css";
 export const Footer = () => {
   return (
@@ -56,10 +57,10 @@ export const Footer = () => {
                 <a href="#">Beställning</a>
               </li>
               <li>
-                <a href="#">Personal Styling</a>
+                <a href="#">Kontakta oss</a>
               </li>
               <li>
-                <a href="#">Kontakta oss</a>
+                <Link to="/Admin/Products">Administration</Link>
               </li>
             </ul>
           </div>
