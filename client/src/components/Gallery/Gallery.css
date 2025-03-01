@@ -68,3 +68,33 @@
     color: red;
     transform: scale(1.2);
 }
+
+
+
+/* ==== PRODUKTLAYOUT (STANDARD) ==== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 produkter per rad på desktop */
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: center;
+  }
+  
+  /* ==== Anpassning för surfplattor (max 768px) ==== */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr) !important; /* 2 produkter per rad */
+    }
+  }
+  
+  /* ==== Anpassning för mobiltelefoner (max 480px) ==== */
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr) !important; /* 2 produkter per rad */
+    }
+  
+    .card {
+      width: 100% !important; /* Gör korten bredare inom sin grid-cell */
+    }
+  }
+  

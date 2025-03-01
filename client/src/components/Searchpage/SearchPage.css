@@ -1,33 +1,59 @@
+/* === STANDARD DESIGN (Desktop) === */
 .search-page {
-    padding: 20px;
-    text-align: center;
-  }
-  
+  padding: 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 produkter per rad på stora skärmar */
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* === RESPONSIV DESIGN === */
+
+/* 📱 Anpassning för surfplattor (max 1024px) */
+@media (max-width: 1024px) {
   .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 produkter per rad */
   }
-  
+}
+
+/* 📱 Anpassning för små surfplattor (max 768px) */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 produkter per rad */
+  }
+}
+
+/* 📱 Anpassning för mobiltelefoner (max 480px) */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 produkt per rad */
+  }
+
   .product-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: 200px;
-    border-radius: 5px;
-    text-align: center;
-    background: #f9f9f9;
-  }
-  
-  .product-card a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .product-image {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
   }
-  
+}

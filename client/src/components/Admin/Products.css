@@ -96,3 +96,114 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #f8f8f8;
 }
+
+
+
+/* För surfplattor (iPad, max 768px) */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .sidebar ul li a {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
+/* För mobiltelefoner (max 480px) */
+@media (max-width: 480px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .sidebar ul li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .header {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* GÖR TABELLEN RESPONSIV */
+  table {
+    font-size: 12px;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+  }
+}

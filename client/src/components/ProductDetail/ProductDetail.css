@@ -1,3 +1,4 @@
+/* === STANDARD DESIGN (Desktop) === */
 .product-detail-container {
   max-width: 900px;
   margin: auto;
@@ -9,7 +10,8 @@
   gap: 20px;
 }
 
-.product-detail-container .product-image {
+/* Produktbild */
+.product-image {
   width: 300px;
   height: 400px;
   object-fit: cover;
@@ -17,6 +19,7 @@
   border-radius: 5px;
 }
 
+/* Produktinfo */
 .product-info {
   flex: 1;
 }
@@ -51,6 +54,7 @@ h1 {
   cursor: pointer;
 }
 
+/* Liknande produkter */
 .similar-products-title {
   margin-top: 40px;
   font-size: 18px;
@@ -58,8 +62,10 @@ h1 {
 
 .similar-products {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 10px;
+  justify-content: center;
 }
 
 .similar-product-card {
@@ -74,7 +80,8 @@ h1 {
   border: 1px solid #ddd;
 }
 
-.similar-product-name .similar-product-price {
+.similar-product-name, 
+.similar-product-price {
   font-weight: bold;
   margin: 5px 0;
 }
@@ -85,20 +92,56 @@ h1 {
   margin: 5px 0;
 }
 
-.icons-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  padding: 20px 0;
-  border-top: 1px solid #ddd;
+/* === RESPONSIV DESIGN === */
+
+/* 📱 För surfplattor (max 768px) */
+@media (max-width: 768px) {
+  .product-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-image {
+    width: 80%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .product-info {
+    width: 100%;
+  }
+
+  .similar-products {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
 }
 
-.icon {
-  text-align: center;
-}
+/* 📱 För mobiltelefoner (max 480px) */
+@media (max-width: 480px) {
+  .product-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.icon span {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 5px;
+  .product-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .product-info {
+    width: 100%;
+  }
+
+  .similar-products {
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+  }
+
+  .similar-product-card {
+    width: 100%;
+  }
 }
